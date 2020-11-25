@@ -1,5 +1,11 @@
-import express from 'express';
+import app from './app';
 
-const app = express();
+import database from './database';
 
-app.listen(3333);
+database.sync(); // somente em dev, não use em produção o {force :true}
+
+const port = process.env.PORT || 3333;
+
+app.listen(port, () => {
+  console.log(`Server running at ${port}`);
+});
