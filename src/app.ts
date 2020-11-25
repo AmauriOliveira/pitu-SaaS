@@ -1,10 +1,12 @@
 import express, { NextFunction, Response, Request } from 'express';
+import cors from 'cors';
 import AppError from './errors/AppError';
-
 import linksRouter from './routes/links';
 
 const app = express();
 app.use(express.json());
+
+app.use(cors());
 
 app.use(linksRouter);
 
