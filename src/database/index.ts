@@ -1,5 +1,5 @@
 import { Sequelize } from 'sequelize';
 
-const sequelize = new Sequelize('mysql://root:amauri32@localhost:3306/pitu');
+const sequelize = new Sequelize(process.env.MY_SQL_STRING!);
 
 export default sequelize;
